@@ -7,12 +7,13 @@
       app
       color="white"
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"/>
+
       <v-toolbar-title
         style="width: 300px"
         class="ml-0 pl-4"
       >
-        <span class="hidden-sm-and-down">Ulas Buku</span>
+        <span>Ulas Buku</span>
       </v-toolbar-title>
       <v-text-field
         flat
@@ -23,7 +24,7 @@
         class="hidden-sm-and-down"
       />
       <v-spacer />
-      <v-btn depressed color="primary">Write Review</v-btn>
+      <v-btn small color="primary" class="mx-2">Write a Review</v-btn>
       <v-btn icon>
         <v-icon>mdi-bell</v-icon>
       </v-btn>
@@ -46,24 +47,9 @@
       v-model="drawer"
       :clipped="$vuetify.breakpoint.lgAndUp"
       app
+      class="hidden-md-and-up"
     >
-      <v-list dense>
-        <template v-for="item in items">
-          <v-list-item
-            :key="item.text"
-            :to="item.link"
-          >
-            <v-list-item-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>
-                {{ item.text }}
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </template>
-      </v-list>
+      <SideBar></SideBar>
     </v-navigation-drawer>
 
     <v-content>
@@ -73,15 +59,16 @@
 </template>
 
 <script>
+import SideBar from '@/components/SideBar.vue';
+
 export default {
   name: 'App',
+  components: {
+    SideBar
+  },
   data: () => ({
     drawer: false,
     group: null,
-    items: [
-        { icon: 'mdi-home', text: 'Home', link: '/' },
-        { icon: 'mdi-help-circle', text: 'About', link: 'about' }
-      ],
   }),
 };
 </script>
