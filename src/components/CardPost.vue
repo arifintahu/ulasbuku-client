@@ -6,20 +6,27 @@
 
     <v-img
       v-if="image"
-      src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
+      :src="imageSrc"
       height="300"
     ></v-img>
 
     <v-list-item>
-      <v-list-item-avatar color="grey"></v-list-item-avatar>
+      <v-list-item-avatar>
+         <v-img :src="avatar"></v-img>
+      </v-list-item-avatar>
       <v-list-item-content>
-        <v-list-item-title class="headline">Our Changing Planet</v-list-item-title>
-        <v-list-item-subtitle>by Kurt Wagner</v-list-item-subtitle>
+        <v-list-item-title v-html="content.title" class="title"></v-list-item-title>
+        <v-list-item-subtitle class="caption">Dari Buku {{content.book}}</v-list-item-subtitle>
+        <v-list-item-subtitle class="caption">Pengulas {{content.writer}}</v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
 
     <v-card-text>
-      Visit ten places on our planet that are undergoing the biggest changes today.
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="body-1" v-html="content.body"></v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
     </v-card-text>
 
     <v-card-actions>
@@ -27,13 +34,13 @@
         text
         color="deep-purple accent-4"
       >
-        Read
+        Baca
       </v-btn>
       <v-btn
         text
         color="deep-purple accent-4"
       >
-        Bookmark
+        Simpan
       </v-btn>
       <v-spacer></v-spacer>
       <v-btn icon>
@@ -48,7 +55,7 @@
 
 <script>
   export default {
-  	props: ['image'],
+  	props: ['image', 'avatar', 'imageSrc', 'content'],
     data: () => ({
 
     }),

@@ -13,7 +13,7 @@
         style="width: 300px"
         class="ml-0 pl-4"
       >
-        <span>Ulas Buku</span>
+        <span class="headline">Ulas Buku</span>
       </v-toolbar-title>
       <v-text-field
         flat
@@ -24,7 +24,7 @@
         class="hidden-sm-and-down"
       />
       <v-spacer />
-      <v-btn small color="primary" class="mx-2">Write a Review</v-btn>
+      <v-btn color="primary" class="mx-2 hidden-sm-and-down">Tulis Ulasan</v-btn>
       <v-btn icon>
         <v-icon>mdi-bell</v-icon>
       </v-btn>
@@ -55,6 +55,7 @@
     <v-content>
       <router-view></router-view>
     </v-content>
+    
   </v-app>
 </template>
 
