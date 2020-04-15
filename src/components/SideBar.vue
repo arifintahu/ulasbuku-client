@@ -5,8 +5,10 @@
       <div class="title">{{item.category}}</div>
       <div v-for="(list, index2) in item.lists" :key="index2">
         <div class="my-4">
-          <div class="body-2">{{list.title}}</div>
-          <div class="caption">Pengulas {{list.writer}}</div>
+          <div class="body-2 font-weight-regular">{{list.title}}</div>
+          <div class="caption font-weight-light">
+            {{list.writer}}
+          </div>
         </div>
       </div>
       <v-divider class="my-4"></v-divider>

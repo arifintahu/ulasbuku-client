@@ -6,39 +6,36 @@
 
     <v-img
       v-if="image"
-      :src="imageSrc"
+      :src="content.imageSrc"
       height="300"
     ></v-img>
 
     <v-list-item>
-      <v-list-item-avatar>
-         <v-img :src="avatar"></v-img>
-      </v-list-item-avatar>
       <v-list-item-content>
-        <v-list-item-title v-html="content.title" class="title"></v-list-item-title>
-        <v-list-item-subtitle class="caption">Dari Buku {{content.book}}</v-list-item-subtitle>
-        <v-list-item-subtitle class="caption">Pengulas {{content.writer}}</v-list-item-subtitle>
+        <v-list-item-title class="title mb-0">{{content.title}}</v-list-item-title>
+        <v-list-item-subtitle class="caption">
+            <v-list-item-avatar size="24" class="mr-1" color="grey">
+               <v-img :src="avatar"></v-img>
+            </v-list-item-avatar>
+            {{content.writer}}
+        </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
 
-    <v-card-text>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="body-1" v-html="content.body"></v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-card-text>
+    <v-card-text class="py-0" v-if="image == 'true'">{{content.body.slice(0,70)}}...</v-card-text>
+    <v-card-text class="py-0" v-if="image == null">{{content.body.slice(0,256)}}...</v-card-text>
 
     <v-card-actions>
       <v-btn
         text
-        color="deep-purple accent-4"
+        color="primary"
+        :to="{ name: 'Review', params: { title: content.name, content: content }}"
       >
         Baca
       </v-btn>
       <v-btn
         text
-        color="deep-purple accent-4"
+        color="primary"
       >
         Simpan
       </v-btn>
@@ -55,7 +52,7 @@
 
 <script>
   export default {
-  	props: ['image', 'avatar', 'imageSrc', 'content'],
+  	props: ['image', 'avatar', 'content'],
     data: () => ({
 
     }),

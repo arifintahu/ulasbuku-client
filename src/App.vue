@@ -13,7 +13,9 @@
         style="width: 300px"
         class="ml-0 pl-4"
       >
-        <span class="headline">Ulas Buku</span>
+        <router-link :to="{ name : 'Home'}" style="text-decoration: none">
+          <span class="headline text--primary text-uppercase">Ulas Buku</span>
+        </router-link>
       </v-toolbar-title>
       <v-text-field
         flat

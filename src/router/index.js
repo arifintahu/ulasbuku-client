@@ -11,6 +11,12 @@ Vue.use(VueRouter)
     component: Home
   },
   {
+    path: '/ulasan/:title',
+    name: 'Review',
+    component: () => import('@/views/Review.vue'),
+    props: true
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
