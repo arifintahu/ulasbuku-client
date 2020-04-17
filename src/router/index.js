@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '@/views/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +15,16 @@ Vue.use(VueRouter)
     name: 'Review',
     component: () => import('@/views/Review.vue'),
     props: true
+  },
+  {
+    path: '/write',
+    name: 'Write',
+    component: () => import('@/views/Write.vue')
+  },
+  {
+    path: '*',
+    name: '404',
+    component: () => import('@/views/404.vue')
   },
   {
     path: '/about',

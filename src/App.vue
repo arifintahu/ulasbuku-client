@@ -26,7 +26,7 @@
         class="hidden-sm-and-down"
       />
       <v-spacer />
-      <v-btn color="primary" class="mx-2 hidden-sm-and-down">Tulis Ulasan</v-btn>
+      <v-btn color="primary" class="mx-2 hidden-sm-and-down" :to="{ name : 'Write'}">Tulis Ulasan</v-btn>
       <v-btn icon>
         <v-icon>mdi-bell</v-icon>
       </v-btn>

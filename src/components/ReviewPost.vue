@@ -10,8 +10,8 @@
         ></v-img>
         <v-container class="content pa-6 ">
         	<section id="title">
-        		<div class="display-2">{{content.title}}</div>
-		        <div class="body-1 py-2">
+        		<div class="display-1">{{content.title}}</div>
+		        <div class="body-2 py-2">
 		            <v-avatar size="24" class="mr-1" color="grey">
 		               <v-img :src="avatar"></v-img>
 		            </v-avatar>
@@ -23,6 +23,9 @@
         			{{content.body}}
         		</div>
         	</section>
+          <section id="profile">
+            <ReviewProfile :profile="profile"></ReviewProfile>
+          </section>
         </v-container>
     </v-sheet>
 
@@ -30,10 +33,19 @@
 </template>
 
 <script>
+  import ReviewProfile from '@/components/ReviewProfile.vue';
+
 	export default {
 		props: ['content'],
+    components: {
+      ReviewProfile
+    },
 		data: () => ({
-
+      profile : {
+        name : 'Miftahul Arifin',
+        desc : 'Electrical engineer who turned out to software developer. <br> Web Application Developer and also Big Data Developer',
+        username : '@arifintahu'
+      }
 		})
 	}
 </script>
