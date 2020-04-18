@@ -5,8 +5,8 @@
       fixed
     >
       <v-btn>
-        <span>SAVE DRAFT</span>
-        <v-icon color="teal">mdi-email</v-icon>
+        <span>PROFILE</span>
+        <v-icon color="teal">mdi-account</v-icon>
       </v-btn>
 
       <v-btn :to="{ name : 'Home'}">
@@ -14,9 +14,9 @@
         <v-icon color="teal">mdi-home</v-icon>
       </v-btn>
 
-      <v-btn>
-        <span>PUBLISH</span>
-        <v-icon color="teal">mdi-mail</v-icon>
+      <v-btn :to="{ name : 'Write'}">
+        <span>WRITE</span>
+        <v-icon color="teal">mdi-pencil</v-icon>
       </v-btn>
     </v-bottom-navigation>
   </div>

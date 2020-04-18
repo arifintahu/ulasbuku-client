@@ -11,6 +11,7 @@
         <SideBar></SideBar>
       </v-col>
     </v-row>
+    <HomeBottom class="hidden-md-and-up"></HomeBottom>
   </v-container>
 </template>
 
@@ -19,13 +20,15 @@
 import SideBar from '@/components/SideBar.vue';
 import HomeFeatured from '@/components/HomeFeatured.vue';
 import HomeReview from '@/components/HomeReview.vue';
+import HomeBottom from '@/components/HomeBottom.vue';
 
 export default {
   name: 'Home',
   components: {
     SideBar,
     HomeFeatured,
-    HomeReview
+    HomeReview,
+    HomeBottom
   }
 }
 </script>

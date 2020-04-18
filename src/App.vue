@@ -7,8 +7,8 @@
       app
       color="white"
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"/>
-
+<!--       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"/>
+ -->
       <v-toolbar-title
         style="width: 300px"
         class="ml-0 pl-4"
@@ -45,14 +45,14 @@
       </v-btn>
     </v-app-bar>
 
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :clipped="$vuetify.breakpoint.lgAndUp"
       app
       class="hidden-md-and-up"
     >
       <SideBar></SideBar>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
 
     <v-content>
       <router-view></router-view>
@@ -62,12 +62,12 @@
 </template>
 
 <script>
-import SideBar from '@/components/SideBar.vue';
+// import SideBar from '@/components/SideBar.vue';
 
 export default {
   name: 'App',
   components: {
-    SideBar
+    // SideBar
   },
   data: () => ({
     drawer: false,
