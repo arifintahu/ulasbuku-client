@@ -30,10 +30,7 @@
       <v-btn icon>
         <v-icon>mdi-bell</v-icon>
       </v-btn>
-      <v-btn
-        icon
-        large
-      >
+      <v-btn icon large v-if="$store.getters.user">
         <v-avatar
           size="32px"
           item
@@ -41,7 +38,11 @@
           <v-img
             src="https://cdn.vuetifyjs.com/images/logos/logo.svg"
             alt="Vuetify"
-          /></v-avatar>
+          />
+        </v-avatar>
+      </v-btn>
+      <v-btn icon large v-if="!$store.getters.user" :to="{ name : 'Signin'}">
+        <v-icon>mdi-login-variant</v-icon>
       </v-btn>
     </v-app-bar>
 
@@ -71,7 +72,7 @@ export default {
   },
   data: () => ({
     drawer: false,
-    group: null,
+    group: null
   }),
 };
 </script>
