@@ -32,6 +32,7 @@
           <v-text-field
             v-model="password"
             label="Password"
+            type="password"
             required
           ></v-text-field>
           <v-btn x-large color="primary" width="300" @click.prevent="signinClick">Sign In</v-btn>

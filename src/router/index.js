@@ -26,6 +26,12 @@ const routes = [
     }
   },
   {
+    path: '/profile/:username',
+    name: 'Profile',
+    component: () => import('@/views/Profile.vue'),
+    props: true
+  },
+  {
     path: '/signin',
     name: 'Signin',
     component: () => import('@/views/Signin.vue')

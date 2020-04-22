@@ -4,7 +4,7 @@
       grow
       fixed
     >
-      <v-btn>
+      <v-btn :to="{ name : 'Profile', params: { username: 'arifintahu' }}">
         <span>PROFILE</span>
         <v-icon color="teal">mdi-account</v-icon>
       </v-btn>

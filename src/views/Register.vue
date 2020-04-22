@@ -10,18 +10,19 @@
       <v-col class="mb-4 justify-center d-flex">
         <form>
           <v-text-field
+            v-model="fullname"
+            label="Full Name"
+            required
+          ></v-text-field>
+          <v-text-field
             v-model="email"
             label="E-mail"
             required
-            @input="$v.email.$touch()"
-            @blur="$v.email.$touch()"
           ></v-text-field>
           <v-text-field
             v-model="password"
             label="Password"
             required
-            @input="$v.password.$touch()"
-            @blur="$v.password.$touch()"
           ></v-text-field>
           <v-btn x-large color="primary" width="300" @click.prevent="submit">Register</v-btn>
         </form>
@@ -35,8 +36,15 @@
 export default {
   name: 'Register',
   data: () => ({
+    fullname: '',
     email: '',
     password: ''
-  })
+  }),
+  methods: {
+    submit(){
+      console.log(this.fullname);
+      this.$router.push({ name : 'Signin' });
+    }
+  }
 }
 </script>
